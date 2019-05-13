@@ -8,7 +8,7 @@ This will allow you to use the WebComponents provided by Plume.js in your applic
 
 ## main-view and page-route
 
-The ```<main-view>``` element represents, as it's name suggest, the main viewport of your application.
+The ```<main-view>``` element represents, as its name suggests, the main viewport of your application.
 It acts as a router, meaning that it allows you to switch easily between the different pages or screens of your app.
 You can define these pages or screens with the ```<page-route>``` element inside your ```<main-view>```.
  
