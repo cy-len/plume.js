@@ -1,5 +1,5 @@
 # plume.js
-A super lightweight toolkit for making Single Page Applications (SPA) in pure HTML/JS, based on WebComponents
+A minimalistic toolkit for making Single Page Applications (SPA) in pure HTML/JS, based on WebComponents
 
 # How to use it
 
