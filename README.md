@@ -53,4 +53,54 @@ Since an example is better than a long text, here is how to works with a basic r
  </body>
 </html>
 ```
- 
+
+### navigation-link
+
+To work with the routing provided by the ```<main-view>``` and ```<page-route>``` elements, you don't want to use the ```<a>``` element like you would do traditionnaly, because it would send a new request to the server and reload the page, which you defeats the whole purpose of a Single Page Application. Instead, you can use the ```<navigation-link>``` provided by Plume.js, and you do so exactly the same way you would use a ```<a>``` element :
+
+```
+<navigation-link href="/contact">Contact</navigation-link>
+```
+
+When the user will click on it, it will automatically change the URL and fire the routing logic of the ```<main-view>```.
+
+
+### flip-flop
+
+The ```<flip-flop>``` element allows you to show one element (flip) or another (flop) based on the return value of a JavaScript function. It is useful in a lot of cases, for instance if you want to display a different page if the user is logged in or not.
+The function, whose name you provide in the ```function``` attribute has to return a boolean. Each time the ```<flip-flop>``` is updated, which it does automatically when it is (re-)displayed by the routing, it will call the specified function, and if it returns true it will display only its first child element, and if it returns false, it will display only its second child element.
+
+Again, an example :
+
+```
+<script>
+ function isAuthenticated() {
+  return true; // Placeholder of course
+ }
+</script>
+
+<flip-flop function="isAuthenticated">
+ <div id="authenticated-home">
+  <!-- This div is displayed only when isAuthenticated() returns true -->
+  <h1>Authenticated user</h1>
+ </div>
+ <div id="unauthenticated-home">
+  <!-- This div is displayed only when isAuthenticated() returns false -->
+  <h1>Unauthenticated user</h1>
+ </div>
+</flip-flop>
+```
+
+### globalStorage object
+
+The globalStorage object is a global variable which is designed as a wrapper object for all the data you may need to want to access everywhere, for instance your authentication token.
+
+### onloadActions
+
+Plume.js needs to overwrite ```window.onload``` and won't work if you overwite it yourself. To allow you to still be able to perform some actions you would normally do on onload, the onloadActions array can be used :
+
+```
+onloadActions.push(() => {
+ // Do some stuff in onload
+});
+```
