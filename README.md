@@ -56,7 +56,7 @@ Since an example is better than a long text, here is how to works with a basic r
 
 ### navigation-link
 
-To work with the routing provided by the ```<main-view>``` and ```<page-route>``` elements, you don't want to use the ```<a>``` element like you would do traditionnaly, because it would send a new request to the server and reload the page, which you defeats the whole purpose of a Single Page Application. Instead, you can use the ```<navigation-link>``` provided by Plume.js, and you do so exactly the same way you would use a ```<a>``` element :
+To work with the routing provided by the ```<main-view>``` and ```<page-route>``` elements, you don't want to use the ```<a>``` element like you would do traditionnaly, because it would send a new request to the server and reload the page, which defeats the whole purpose of a Single Page Application. Instead, you can use the ```<navigation-link>``` provided by Plume.js, and you do so exactly the same way you would use a ```<a>``` element :
 
 ```
 <navigation-link href="/contact">Contact</navigation-link>
